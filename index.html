@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070914" />
+  <meta name="description" content="A hand-built, NES-style Mario platformer for the browser. Run, jump, stomp goombas, and reach the flag." />
+  <title>SUPER MARIO — 8-Bit Arcade</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="pixel-dot" aria-hidden="true"></span>
+        <span>PLAYGROUND <b>ARCADE</b></span>
+      </div>
+      <div class="actions">
+        <button id="muteButton" class="icon-btn" type="button" aria-label="Toggle sound" title="Sound (M)">🔊</button>
+        <button id="pauseButton" class="icon-btn" type="button" aria-label="Pause game" title="Pause (P)">❚❚</button>
+      </div>
+    </header>
+
+    <main class="stage-wrap">
+      <div class="cabinet">
+        <div class="stage" id="stage">
+          <canvas id="game" width="256" height="240" tabindex="0"
+            aria-label="Super Mario, an NES-style platform game. Use the arrow keys or A and D to move, Z or Space to jump, and X or Shift to run."></canvas>
+          <div class="scanlines" aria-hidden="true"></div>
+          <div class="stage-glare" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="hints">
+        <span class="hint"><kbd>←</kbd><kbd>→</kbd> move</span>
+        <span class="hint"><kbd>Z</kbd> / <kbd>space</kbd> jump</span>
+        <span class="hint"><kbd>X</kbd> run / fire</span>
+        <span class="hint"><kbd>P</kbd> pause</span>
+        <span class="hint touch-hint">Touch controls appear on phones</span>
+      </div>
+    </main>
+
+    <div class="touch" id="touchControls">
+      <div class="touch-pad touch-left">
+        <button class="tbtn dir" data-action="left" type="button" aria-label="Move left">◀</button>
+        <button class="tbtn dir" data-action="right" type="button" aria-label="Move right">▶</button>
+      </div>
+      <div class="touch-pad touch-right">
+        <button class="tbtn face b" data-action="run" type="button" aria-label="Run and throw fireball">B</button>
+        <button class="tbtn face a" data-action="jump" type="button" aria-label="Jump">A</button>
+      </div>
+    </div>
+  </div>
+
+  <noscript>This game needs JavaScript enabled.</noscript>
+  <script src="js/core.js"></script>
+  <script src="js/levels.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
